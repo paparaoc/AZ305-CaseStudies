@@ -1,0 +1,20 @@
+Govenanace:
+===========
+Case Study -1:
+===========
+. Azure offers two methods to implement cost management. There is a cost management feature integrated into the Azure portal. In addition, Enterprise Agreement subscriptions also offer the ability to roll up billing at an account, department, or the Enterprise Agreement level.
+• Regardless of which cost management method is used, the first step is to ensure all Azure subscriptions are organized into a suitable hierarchy. Costs can then be aggregated at each node in this hierarchy for roll-up reporting. The cost management in the Azure portal uses the management group hierarchy. EA subscriptions are organized into a 4-level hierarchy, comprising the root (at the Enterprise Agreement level), departments, accounts, and subscriptions. Considering that Tailwind Traders has an existing Enterprise Agreement level, they might want to consider Enterprise Agreement billing and reporting mechanism. In addition, they might want to consider mirroring the Enterprise Agreement hierarchy by using management groups, to provide consistency from the billing and subscription management perspective.
+• In the case of Tailwind Traders, the hierarchy will include the tenant root management group, a top-level management group for the company, followed by a separate management group for each business unit. Each of these management groups would, in turn, include child management groups for each department. Each of these management groups would contain subscriptions associated with their respective department.
+• Each subscription is a separate billing unit, so this functionality is available based on functionality inherent to subscriptions. Aggregated billing is also available at the management group level (via Cost Management in the Azure portal) and at the department level (in the Enterprise Agreement hierarchy).
+
+.Company-wide aggregated billing is available at the root management group level (via Cost Management in the Azure portal) and at the Enterprise Agreement level (in the Enterprise Agreement hierarchy).
+• There are two ways to accomplish separate cost reporting for development, test, and production environments within each business unit.
+• If each of these environments is implemented by using a separate subscription (which would be recommended to provide sufficient level of isolation between them), then, as explained earlier, this functionality is available based on functionality inherent to subscriptions.
+• If development, test, and production resources reside in the same subscription, then each should be appropriately tagged to designate its environment. Tag information is included in the cost reporting, so it is still relatively easy to identify.
+
+Case Study 2:
+=============
+. New development project. What do you recommend for the new development project? Explain how the requirements will be met.
+• There are several ways to capture costs related to the new project. Tagging could be used to identify the project resources. An Azure policy could then be used to ensure the tagging is in place. Another option is to use a subscription to report billing. If all the resources could be placed in a resource group, that could be a possible solution.
+• Azure policy can also be used to ensure that top pricing tier Azure VMs are not provisioned. The policy could be applied to a resource group or subscription. Non-compliant resources can be automatically identified.
+• Reminder - You can assign a policy definition or an initiative definition on the root management group level, which would apply to all subscriptions in the hierarchy below the root. Note that you can exclude subscriptions, resource groups, or even individual resources from such policy if you need to implement exceptions.
