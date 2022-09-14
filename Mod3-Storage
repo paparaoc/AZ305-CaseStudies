@@ -1,0 +1,8 @@
+• All the content is classified as non-relational.
+• The design should consider file location, compliance and regulatory requirements, performance, and storage replication. Also, the solution should be cost effective and easy to centrally manage.
+• Blob storage is recommended for the media and corporate files. Blob storage is less expensive, offers the immutable storage requirements for legal, and supports API access for internal applications.
+• Azure Files is recommended for the marketing literature. Azure Files is needed for marketing since the files will be accessed via SMB internally.
+• Marketing literature access latency for internal users could be reduced by using a local Windows Server and File Sync
+• Zone redundant storage is recommended. An argument could be made for Geo-redundant zone storage if the files are mission critical. Read access geo-redundant storage could be used if the front end could make use of a secondary region. This decision would depend on the customer’s locations and traffic.
+• The hot tier should be used for all media, marketing literature and corporate documents less than one year old. The archive tier or cold tier should be used for corporate documents older than one year. This decision is based on retrieval latency, storage duration and a desire to reduce costs. Discuss that there is not enough information to decide between Cold and Archive and ask what other questions they may want to ask Tailwind Traders. Lifecycle management should be used to convert corporate documents to a cheaper storage tier after one year.
+• Private endpoints and firewall policies should be applied. If private endpoints haven’t been discussed yet, do not go in depth at this point. They are covered in the Networking module.
